@@ -14,3 +14,5 @@ createRoot(document.getElementById('root')).render(
 
 // in component you can only return one tag, can not return 2 tags, i.e. inside the return, all
 // code should be inside on tag block only
+
+//hooks are the way, to use the features that react gives to us,like state management etc.

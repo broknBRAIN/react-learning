@@ -12,4 +12,6 @@ const UserCard = (props) => {
     )
 };
 
+//props are the function arguments
+
 export default UserCard;
