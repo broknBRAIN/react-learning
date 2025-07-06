@@ -1,21 +1,35 @@
 import React,{useState} from 'react'
 import Button from "./component/Button"
 import InputCard from "./component/InputCard"
+import UserCard from "./component/UserCard"
 
 
-//stateLifting
-//parent create,manage,changes the state then syncs it between its childrens
+//conditional rendering
 function App() {
-  //state created in parent
-  const [name,setName] = useState('');
+  const [show,setShow] = useState(false);
 
-  return (
-    <div>
-      <InputCard name={name} setName ={setName} />
-      <p>value of name in parent is {name}</p>
-    </div>
-  )
+  if(show)
+  {
+    const [name,setName] = useState('');
+    return (
+      <div>
+        <InputCard name={name} setName ={setName} />
+        <p>value of name in parent is {name}</p>
+      </div>
+    )
+  }
+  else{
+      return (
+        <div>
+          <UserCard name="Priyansh" desc="working"/>
+        </div>
+      )
+  }
 }
+
+//depending upon the value of the show
+//we render what we want to show
+//ternary operator can also be used
 
 export default App
 
