@@ -1,14 +1,18 @@
 import React,{useState} from 'react'
 import Button from "./component/Button"
+import InputCard from "./component/InputCard"
 
+
+//stateLifting
+//parent create,manage,changes the state then syncs it between its childrens
 function App() {
-  const [count,setCount] = useState(0);
+  //state created in parent
+  const [name,setName] = useState('');
 
   return (
     <div>
-      <Button onclickFn={() => {setCount(count+1)}}>
-        {count}
-      </Button>
+      <InputCard name={name} setName ={setName} />
+      <p>value of name in parent is {name}</p>
     </div>
   )
 }
