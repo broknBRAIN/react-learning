@@ -4,17 +4,34 @@ import InputCard from "./component/InputCard"
 import UserCard from "./component/UserCard"
 
 
-const handleClick = () => {
-  alert("i am clicked");
+const handleChange = (e) => {
+  console.log(e.target.value);
 }
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  //we prevent default behaviour
+  //it whenever we press submit
+  //its default work is to refresh the page and send the entered info to backend
+
+  //lets write out custom behaviour
+  alert("form submitted");
+}
+
 //event handling
 function App() {
   
   return (
     <div>
-      <button onClick={handleClick}>Click me</button>
+      {/* form has a onSubmit event, when even we press the button of type=submit
+      it triggers */}
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <input type='text' onChange={(e) => handleChange(e)}/>
+        <button type='submit'>Submit</button>
+      </form>
     </div>
-    //its so easy to perform operation on click
+
+    //passing value to the handleChange function
   )
 }
 
